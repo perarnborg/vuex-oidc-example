@@ -3,5 +3,6 @@ import 'core-js/fn/array/find'
 import 'core-js/fn/array/find-index'
 import 'core-js/fn/promise'
 import { vuexOidcProcessSilentSignInCallback } from 'vuex-oidc'
+import { oidcSettingsChef } from './config/oidc'
 
-vuexOidcProcessSilentSignInCallback(process.env.OIDC_CONFIG)
+vuexOidcProcessSilentSignInCallback(oidcSettingsChef)

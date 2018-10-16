@@ -20,7 +20,7 @@ export default {
       })
       .catch((err) => {
         console.error(err)
-        this.$router.push('/oidc-callback-error') // Handle errors any way you want
+        this.$router.push('/signin-oidc-error') // Handle errors any way you want
       })
   }
 }
