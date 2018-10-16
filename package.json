@@ -18,9 +18,6 @@
     "@vue/cli-service": "^3.0.3",
     "@vue/eslint-config-standard": "^3.0.5",
     "json-markup": "^1.1.1",
-    "json-pretty-html": "^1.1.2",
-    "ltrim": "^1.0.0",
-    "rtrim": "^1.0.0",
     "vue-template-compiler": "^2.5.17",
     "vuex-oidc": "^1.7.0"
   }

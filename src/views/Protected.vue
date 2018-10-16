@@ -14,8 +14,6 @@
 <script>
 import { mapGetters } from 'vuex'
 import jsonMarkup from 'json-markup'
-import ltrim from 'ltrim'
-import rtrim from 'rtrim'
 
 export default {
   name: 'Protected',
@@ -25,7 +23,7 @@ export default {
       'oidcUser'
     ]),
     userDisplay: function () {
-      return ltrim(rtrim(jsonMarkup(this.oidcUser), '"'), '"')
+      return jsonMarkup(this.oidcUser)
     }
   }
 }
