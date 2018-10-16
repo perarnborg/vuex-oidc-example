@@ -1,0 +1,27 @@
+{
+  "name": "vuex-oidc-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.3",
+    "@vue/cli-plugin-eslint": "^3.0.3",
+    "@vue/cli-service": "^3.0.3",
+    "@vue/eslint-config-standard": "^3.0.5",
+    "json-markup": "^1.1.1",
+    "json-pretty-html": "^1.1.2",
+    "ltrim": "^1.0.0",
+    "rtrim": "^1.0.0",
+    "vue-template-compiler": "^2.5.17",
+    "vuex-oidc": "^1.7.0"
+  }
+}
