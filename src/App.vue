@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div
+      v-if="hasAccess"
       id="nav"
     >
       <router-link to="/">Home</router-link> |
@@ -18,7 +19,10 @@ export default {
   computed: {
     ...mapGetters('oidcStore', [
       'oidcIsAuthenticated'
-    ])
+    ]),
+    hasAccess: function () {
+      return this.oidcIsAuthenticated || this.$route.meta.isPublic
+    }
   }
 }
 </script>
