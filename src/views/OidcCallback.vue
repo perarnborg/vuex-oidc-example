@@ -9,7 +9,7 @@ import { mapActions } from 'vuex'
 export default {
   name: 'OidcCallback',
   methods: {
-    ...mapActions([
+    ...mapActions('oidcStore', [
       'oidcSignInCallback'
     ])
   },

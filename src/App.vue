@@ -16,7 +16,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'App',
   computed: {
-    ...mapGetters([
+    ...mapGetters('oidcStore', [
       'oidcIsAuthenticated'
     ])
   }

@@ -7,6 +7,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    oidcStore: vuexOidcCreateStoreModule(oidcSettings)
+    oidcStore: vuexOidcCreateStoreModule(oidcSettings, { namespaced: true })
   }
 })

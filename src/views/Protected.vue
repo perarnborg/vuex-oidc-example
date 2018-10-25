@@ -18,7 +18,7 @@ import jsonMarkup from 'json-markup'
 export default {
   name: 'Protected',
   computed: {
-    ...mapGetters([
+    ...mapGetters('oidcStore', [
       'oidcIsAuthenticated',
       'oidcUser'
     ]),

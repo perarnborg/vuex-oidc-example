@@ -45,6 +45,6 @@ const router = new Router({
   ]
 })
 
-router.beforeEach(vuexOidcCreateRouterMiddleware(store))
+router.beforeEach(vuexOidcCreateRouterMiddleware(store, 'oidcStore'))
 
 export default router
