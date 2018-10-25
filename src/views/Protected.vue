@@ -4,19 +4,18 @@
     class="about"
   >
     <h1>This route requires authentication</h1>
-    <p>
-      You are signed in as:
-    </p>
-    <div style="width:100%;max-width:640px;height: 200px;margin: 0 auto;font-family: monospace;" v-html="userDisplay"></div>
+    <SignedInUser />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import jsonMarkup from 'json-markup'
+import SignedInUser from '@/components/SignedInUser'
 
 export default {
   name: 'Protected',
+  components: { SignedInUser },
   computed: {
     ...mapGetters('oidcStore', [
       'oidcIsAuthenticated',

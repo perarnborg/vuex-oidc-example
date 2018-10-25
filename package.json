@@ -17,6 +17,7 @@
     "@vue/cli-plugin-eslint": "^3.0.3",
     "@vue/cli-service": "^3.0.3",
     "@vue/eslint-config-standard": "^3.0.5",
+    "core-js": "^2.5.7",
     "json-markup": "^1.1.1",
     "vue-template-compiler": "^2.5.17",
     "vuex-oidc": "^1.9.3"
