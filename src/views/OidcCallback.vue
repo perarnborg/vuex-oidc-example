@@ -14,6 +14,7 @@ export default {
     ])
   },
   mounted () {
+    console.log('ok')
     this.oidcSignInCallback()
       .then((redirectPath) => {
         this.$router.push(redirectPath)

@@ -13,7 +13,7 @@ module.exports = {
       entry: 'src/silent-renew-oidc.js',
       template: 'public/silent-renew-oidc.html',
       filename: 'silent-renew-oidc.html',
-      chunks: ['silent-renew-oidc']
+      excludeChunks: ['app']
     }
   }
 }

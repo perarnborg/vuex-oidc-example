@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { vuexOidcCreateStoreModule } from 'vuex-oidc'
-import { oidcSettingsChef } from './config/oidc'
+import { oidcSettings } from './config/oidc'
 
 Vue.use(Vuex)
 

@@ -26,7 +26,7 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "protected" */ './views/Protected.vue')
     },
     {
-      path: '/signin-oidc', // Needs to match redirect_uri in you oidcSettings
+      path: '/oidc-callback', // Needs to match redirect_uri in you oidcSettings
       name: 'oidcCallback',
       component: OidcCallback,
       meta: {
@@ -35,7 +35,7 @@ const router = new Router({
       }
     },
     {
-      path: '/signin-oidc-error', // Needs to match redirect_uri in you oidcSettings
+      path: '/oidc-callback-error', // Needs to match redirect_uri in you oidcSettings
       name: 'oidcCallbackError',
       component: OidcCallbackError,
       meta: {
