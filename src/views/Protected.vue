@@ -17,7 +17,7 @@ export default {
   name: 'Protected',
   components: { SignedInUser },
   computed: {
-    ...mapGetters([
+    ...mapGetters('oidcStore', [
       'oidcIsAuthenticated',
       'oidcUser'
     ]),

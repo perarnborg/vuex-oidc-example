@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div
+      v-if="hasAccess"
       id="nav"
     >
       <router-link to="/">Home</router-link> |
@@ -16,9 +17,12 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'App',
   computed: {
-    ...mapGetters([
+    ...mapGetters('oidcStore', [
       'oidcIsAuthenticated'
-    ])
+    ]),
+    hasAccess: function () {
+      return this.oidcIsAuthenticated || this.$route.meta.isPublic
+    }
   }
 }
 </script>
