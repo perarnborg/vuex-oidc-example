@@ -1,5 +1,7 @@
 # vuex-oidc-example
 
+En example of how to use vuex-oidc: https://github.com/perarnborg/vuex-oidc
+
 ## Project setup
 ```
 npm install
