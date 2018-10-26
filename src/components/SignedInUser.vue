@@ -7,7 +7,10 @@
     </p>
     <div style="width:100%;max-width:640px;height: 200px;margin: 0 auto;font-family: monospace;" v-html="userDisplay"></div>
     <p>
-      Id token:
+      Id token
+    </p>
+    <p>
+      expires {{ new Date(oidcIdTokenExp).toISOString() }}
     </p>
     <textarea readonly style="width:100%;max-width:640px;height: 200px;margin: 0 auto;font-family: monospace;" v-model="oidcIdToken"></textarea>
 
@@ -31,7 +34,8 @@ export default {
       'oidcIsAuthenticated',
       'oidcAuthenticationIsChecked',
       'oidcUser',
-      'oidcIdToken'
+      'oidcIdToken',
+      'oidcIdTokenExp'
     ]),
     userDisplay: function () {
       return jsonMarkup(this.oidcUser)
