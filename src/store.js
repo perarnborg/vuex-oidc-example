@@ -9,7 +9,9 @@ export default new Vuex.Store({
   modules: {
     oidcStore: vuexOidcCreateStoreModule(
       oidcSettings,
+      // Optionlaly define the store module as namespaced
       { namespaced: true },
+      // Optional OIDC event listeners
       {
         userLoaded: (user) => console.log('OIDC user is loaded:', user),
         userUnloaded: () => console.log('OIDC user is unloaded'),
