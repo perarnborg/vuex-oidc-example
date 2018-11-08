@@ -25,15 +25,15 @@ export default {
     }
   },
   methods: {
-    authenticationListener: function () {
-      console.log('I am listening to another authentication event')
+    userLoaded: function () {
+      console.log('I am listening to the user loaded event in vuex-oidc')
     }
   },
   mounted () {
-    window.addEventListener('vuexoidc:wasauthenticated', this.authenticationListener)
+    window.addEventListener('vuexoidc:userLoaded', this.userLoaded)
   },
   destroyed () {
-    window.removeEventListener('vuexoidc:wasauthenticated', this.authenticationListener)
+    window.removeEventListener('vuexoidc:userLoaded', this.userLoaded)
   }
 }
 </script>
