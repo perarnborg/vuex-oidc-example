@@ -23,6 +23,17 @@ export default {
     hasAccess: function () {
       return this.oidcIsAuthenticated || this.$route.meta.isPublic
     }
+  },
+  methods: {
+    authenticationListener: function () {
+      console.log('I am listening to another authentication event')
+    }
+  },
+  mounted () {
+    window.addEventListener('vuexoidc:wasauthenticated', this.authenticationListener)
+  },
+  destroyed () {
+    window.removeEventListener('vuexoidc:wasauthenticated', this.authenticationListener)
   }
 }
 </script>
