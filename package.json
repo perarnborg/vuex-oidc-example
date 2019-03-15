@@ -12,14 +12,19 @@
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
-    "vuex-oidc": "^1.14.0"
+    "vuex-oidc": "^1.12.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-plugin-eslint": "^3.0.3",
     "@vue/cli-service": "^3.0.3",
     "@vue/eslint-config-standard": "^4.0.0",
+    "ajv": "^6.6.2",
     "core-js": "^2.5.7",
+    "eslint": "^5.10.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "json-markup": "^1.1.1",
     "vue-template-compiler": "^2.5.17"
   }
