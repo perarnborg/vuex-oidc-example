@@ -25,8 +25,8 @@ export default {
     }
   },
   methods: {
-    userLoaded: function () {
-      console.log('I am listening to the user loaded event in vuex-oidc')
+    userLoaded: function (e) {
+      console.log('I am listening to the user loaded event in vuex-oidc', e.detail)
     }
   },
   mounted () {
