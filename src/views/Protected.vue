@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="oidcIsAuthenticated"
-    class="about"
+    class="protected"
   >
     <h1>This route requires authentication</h1>
     <SignedInUser />
@@ -27,16 +27,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.json-markup {
-  color: transparent;
-}
-.json-markup span {
-  color: black;
-  float: left;
-}
-.json-markup .json-markup-key {
-  clear: left;
-}
-</style>
