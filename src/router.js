@@ -28,11 +28,7 @@ const router = new Router({
     {
       path: '/oidc-callback', // Needs to match redirect_uri in you oidcSettings
       name: 'oidcCallback',
-      component: OidcCallback,
-      meta: {
-        isOidcCallback: true,
-        isPublic: true
-      }
+      component: OidcCallback
     },
     {
       path: '/oidc-callback-error', // Needs to match redirect_uri in you oidcSettings
