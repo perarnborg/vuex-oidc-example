@@ -7,13 +7,19 @@ module.exports = {
       entry: 'src/main.js',
       template: 'public/index.html',
       filename: 'index.html',
-      excludeChunks: ['silent-renew-oidc']
+      excludeChunks: ['silent-renew-oidc', 'oidc-callback']
+    },
+    oidccallback: {
+      entry: 'src/oidc-callback.js',
+      template: 'public/oidc-callback.html',
+      filename: 'oidc-callback.html',
+      excludeChunks: ['app', 'silent-renew-oidc']
     },
     silentrenewoidc: {
       entry: 'src/silent-renew-oidc.js',
       template: 'public/silent-renew-oidc.html',
       filename: 'silent-renew-oidc.html',
-      excludeChunks: ['app']
+      excludeChunks: ['app', 'oidc-callback']
     }
   }
 }
