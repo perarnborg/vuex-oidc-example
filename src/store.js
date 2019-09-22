@@ -21,8 +21,7 @@ export default new Vuex.Store({
       // Optional OIDC store settings
       {
         namespaced: true,
-        dispatchEventsOnWindow: true,
-        routerMode: 'hash'
+        dispatchEventsOnWindow: true
       },
       // Optional OIDC event listeners
       {
