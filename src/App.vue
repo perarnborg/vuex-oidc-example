@@ -5,14 +5,16 @@
       id="nav"
     >
       <router-link to="/">Home</router-link> |
-      <router-link to="/protected">Protected</router-link>
+      <router-link to="/protected">Protected</router-link> |
+      <a v-if="oidcIsAuthenticated" href @click.prevent="signOut">Sign out</a>
+      <a v-else href @click.prevent="authenticateOidcPopup">Sign in</a>
     </div>
     <router-view/>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'App',
@@ -25,11 +27,20 @@ export default {
     }
   },
   methods: {
+    ...mapActions('oidcStore', [
+      'authenticateOidcPopup',
+      'removeOidcUser'
+    ]),
     userLoaded: function (e) {
       console.log('I am listening to the user loaded event in vuex-oidc', e.detail)
     },
     oidcError: function (e) {
       console.log('I am listening to the oidc error event in vuex-oidc', e.detail)
+    },
+    signOut: function () {
+      this.removeOidcUser().then(() => {
+        this.$router.push('/')
+      })
     }
   },
   mounted () {

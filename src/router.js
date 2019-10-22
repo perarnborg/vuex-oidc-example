@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import OidcCallback from './views/OidcCallback.vue'
+import OidcPopupCallback from './views/OidcPopupCallback.vue'
 import OidcCallbackError from './views/OidcCallbackError.vue'
 import { vuexOidcCreateRouterMiddleware } from 'vuex-oidc'
 import store from '@/store'
@@ -29,6 +30,11 @@ const router = new Router({
       path: '/oidc-callback', // Needs to match redirect_uri in you oidcSettings
       name: 'oidcCallback',
       component: OidcCallback
+    },
+    {
+      path: '/oidc-popup-callback', // Needs to match redirect_uri in you oidcSettings
+      name: 'oidcPopupCallback',
+      component: OidcPopupCallback
     },
     {
       path: '/oidc-callback-error', // Needs to match redirect_uri in you oidcSettings
