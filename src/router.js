@@ -27,12 +27,12 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "protected" */ './views/Protected.vue')
     },
     {
-      path: '/oidc-callback', // Needs to match redirect_uri in you oidcSettings
+      path: '/oidc-callback', // Needs to match redirectUri in you oidcSettings
       name: 'oidcCallback',
       component: OidcCallback
     },
     {
-      path: '/oidc-popup-callback', // Needs to match redirect_uri in you oidcSettings
+      path: '/oidc-popup-callback', // Needs to match popupRedirectUri in you oidcSettings
       name: 'oidcPopupCallback',
       component: OidcPopupCallback
     },
