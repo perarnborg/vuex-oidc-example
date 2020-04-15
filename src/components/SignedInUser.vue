@@ -6,17 +6,31 @@
       You are signed in as:
     </p>
     <div style="width:100%;max-width:640px;height: 200px;margin: 0 auto;font-family: monospace;" v-html="userDisplay"></div>
-    <p>
-      Id token
-    </p>
-    <p>
-      expires {{ new Date(oidcIdTokenExp).toISOString() }}
-    </p>
-    <textarea readonly style="width:100%;max-width:640px;height: 200px;margin: 0 auto;font-family: monospace;" v-model="oidcIdToken"></textarea>
+
+    <div v-for="tokenProperty in ['oidcIdToken', 'oidcAccessToken', 'oidcRefreshToken']" :key="tokenProperty" class="token-box">
+      <p>
+        {{tokenProperty}}
+      </p>
+      <p v-if="dynamicGet(tokenProperty)">
+        <span v-if="dynamicGet(`${tokenProperty}Exp`)">
+          expires {{ new Date(dynamicGet(`${tokenProperty}Exp`)).toISOString() }}
+        </span>
+        <span v-else>
+          Expiration of {{tokenProperty}} is unknown.
+        </span>
+        <br>
+        <textarea  readonly style="width:100%;max-width:640px;height: 200px;margin: 0 auto;font-family: monospace;">{{dynamicGet(tokenProperty)}}</textarea>
+      </p>
+      <p v-else>
+        There is no {{tokenProperty}} in the store.
+      </p>
+    </div>
+
 
     <p>
       <button @click="authenticateOidcSilent">Reauthenticate silently</button>
     </p>
+  </div>
 
   </div>
   <p v-else-if="oidcAuthenticationIsChecked">You are not signed in</p>
@@ -35,14 +49,22 @@ export default {
       'oidcAuthenticationIsChecked',
       'oidcUser',
       'oidcIdToken',
-      'oidcIdTokenExp'
+      'oidcIdTokenExp',
+      'oidcAccessToken',
+      'oidcAccessTokenExp',
+      'oidcRefreshToken',
+      'oidcRefreshTokenExp',
     ]),
     userDisplay: function () {
       return jsonMarkup(this.oidcUser)
-    }
+    },
   },
   methods: {
-    ...mapActions('oidcStore', ['authenticateOidcSilent'])
+    ...mapActions('oidcStore', ['authenticateOidcSilent']),
+    // this[property] does not work in v-for as context is shifted
+    dynamicGet(property) {
+      return this[property]
+    }
   }
 }
 </script>
@@ -57,5 +79,11 @@ export default {
 }
 .json-markup .json-markup-key {
   clear: left;
+}
+
+.token-box {
+  background-color: lightgray;
+  padding: 30px;
+  margin: 50px;
 }
 </style>
