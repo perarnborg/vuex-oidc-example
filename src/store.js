@@ -31,7 +31,8 @@ export default new Vuex.Store({
         accessTokenExpired: () => console.log('Access token did expire'),
         silentRenewError: () => console.log('OIDC user is unloaded'),
         userSignedOut: () => console.log('OIDC user is signed out'),
-        oidcError: (payload) => console.log('OIDC error', payload)
+        oidcError: (payload) => console.log('OIDC error', payload),
+        automaticSilentRenewError: (payload) => console.log('OIDC automaticSilentRenewError', payload)
       }
     )
   }

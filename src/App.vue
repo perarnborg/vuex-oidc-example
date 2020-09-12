@@ -35,7 +35,10 @@ export default {
       console.log('I am listening to the user loaded event in vuex-oidc', e.detail)
     },
     oidcError: function (e) {
-      console.log('I am listening to the oidc error event in vuex-oidc', e.detail)
+      console.log('I am listening to the oidc oidcError event in vuex-oidc', e.detail)
+    },
+    automaticSilentRenewError: function (e) {
+      console.log('I am listening to the automaticSilentRenewError event in vuex-oidc', e.detail)
     },
     signOut: function () {
       this.removeOidcUser().then(() => {
@@ -46,10 +49,12 @@ export default {
   mounted () {
     window.addEventListener('vuexoidc:userLoaded', this.userLoaded)
     window.addEventListener('vuexoidc:oidcError', this.oidcError)
+    window.addEventListener('vuexoidc:automaticSilentRenewError', this.automaticSilentRenewError)
   },
   destroyed () {
     window.removeEventListener('vuexoidc:userLoaded', this.userLoaded)
     window.removeEventListener('vuexoidc:oidcError', this.oidcError)
+    window.removeEventListener('vuexoidc:automaticSilentRenewError', this.automaticSilentRenewError)
   }
 }
 </script>
