@@ -15,7 +15,7 @@
     <textarea readonly style="width:100%;max-width:640px;height: 200px;margin: 0 auto;font-family: monospace;" v-model="oidcIdToken"></textarea>
 
     <p>
-      <button @click="authenticateOidcSilent">Reauthenticate silently</button>
+      <button @click="reauthenticate">Reauthenticate silently</button>
     </p>
 
   </div>
@@ -42,7 +42,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions('oidcStore', ['authenticateOidcSilent'])
+    ...mapActions('oidcStore', ['authenticateOidcSilent', 'removeOidcUser']),
+    reauthenticate () {
+      this.authenticateOidcSilent()
+        .catch(() => this.removeOidcUser())
+    }
   }
 }
 </script>
