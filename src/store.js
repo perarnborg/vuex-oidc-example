@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { vuexOidcCreateStoreModule } from 'vuex-oidc'
 import { oidcSettings } from './config/oidc'
-// NOTE: If you want to customize how tokens are stored you can use WebStorageStateStore from oidc-client (see bellow)
+// NOTE: If you want to customize how tokens are stored you can use WebStorageStateStore from oidc-client-ts (see bellow)
 // Default storage is window.localStorage
-// import { WebStorageStateStore } from 'oidc-client'
+// import { WebStorageStateStore } from 'oidc-client-ts'
 
 Vue.use(Vuex)
 
