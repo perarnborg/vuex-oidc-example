@@ -2,7 +2,7 @@
 
 An example of how to use vuex-oidc: https://github.com/perarnborg/vuex-oidc
 
-> :warning: **NOTICE**: vuex-oidc v4 introduces some breaking changes (such as dropping support for the implicit flow). This example uses v3.
+> :warning: **NOTICE**: In this branch v3 of vuex-oidc is used. v4 stopped supporting the implicit flow.
 
 ## Project setup
 ```
